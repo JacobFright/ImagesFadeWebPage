@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title> Main Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div>JACOB FRIGHT</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <imagesection>
+        <img class="imagefade" src="Images/image0.jpg" alt="Test Image 1">
+        <div class="caption">This is a laptop</div>
+        <script>
+            var loop, counter = 0;
+            var desc = [
+                "This is a laptop",
+                "This is a code close up",
+                "This laptop is sleeping"];
+            $(document).ready(function () {
+                loop = setInterval(function(){
+                    if(counter == 3){counter = 0};
+                    $(".imagefade").attr("src", "Images/image" + counter +".jpg");
+                    $(".caption").text(desc[counter]);
+                    counter++;
+                },10000);
+            })
+        </script>
+    </imagesection>
+</body>
+
+</html>
