@@ -6,10 +6,24 @@
     <title> Main Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </script>
 </head>
 
 <body>
     <div class="container">
+        <script>
+            $.ajax({
+                type: "GET",
+                url: "file:///C:/Users/jacob/OneDrive/Documents/Coding/ImagesFadeWebPage/times.csv",
+                success: CSVToHTMLTable
+            });
+            function splitCSV(data) {
+                var lines = data.split('\n');
+                var values = lines[0].split(",");
+                
+            }
+
+        </script>
         <div class="nav-wrapper">
             <div class="left-side">
                 <div class="nav-link-wrapper">
@@ -28,21 +42,28 @@
 
     </div>
     <imagesection>
-        <img class="imagefade" src="Images/image0.jpg" alt="Test Image 1">
-        <div class="caption">This is a laptop</div>
+        <img class="imagefade" src="Images/1.-01hrs30.jpg" alt="Feed Time - 01:30-01:51">
+        <div class="caption">Feed duration 21 minutes</div>
+
         <script>
-            var loop, counter = 0;
-            var desc = [
-                "This is a laptop",
-                "This is a code close up",
-                "This laptop is sleeping"];
+            window.setInterval(SetImage, 5000);
             $(document).ready(function () {
-                loop = setInterval(function(){
-                    if(counter == 3){counter = 0};
-                    $(".imagefade").attr("src", "Images/image" + counter +".jpg");
-                    $(".caption").text(desc[counter]);
-                    counter++;
-                },10000);
+                var nowdate = new Date();
+                var waketime = new Date();
+                waketime.setHours(16);
+                waketime.setMinutes(26);
+
+                var bedtime = new Date();
+                bedtime.setHours(16);
+                bedtime.setMinutes(37);
+                if (waketime < nowdate && nowdate < bedtime) {
+                    $(".imagefade").attr("src", "Images/1.-01hrs30.jpg");
+                    $(".caption").text("Feed duration 21 minutes");
+                }
+                else {
+                    $(".imagefade").attr("src", "Images/1.-09hrs32.jpg");
+                    $(".caption").text("Feed duration 10 minutes");
+                }
             })
         </script>
     </imagesection>
