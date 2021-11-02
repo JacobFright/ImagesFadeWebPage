@@ -5291,12 +5291,12 @@
                 ]
             }
         };
-        let vidID = ['1UG1jLErRoiI3qvs3c0Ogkv00gnASJDIn', '1xYE3W_xjNpGTLJ9UVoeI28xbOQN8zako',
-            '1T91nDCqLhOr9nOd-8fSYgr6KuqkpAfQ9', '1aZ40V_5E39OFZH1xb-Q167XWTmiwLliB',
-            '1QztCuSXl35VANf_gMbj9GHkLe09bQRXp', '1a6WDvYcH9JzK6mxBsBO8QIHQ3DtwW5wc',
-            '1IdCywXWNjLckvi28s3hsTXaPpq8I2Tp4', '1k1hVGJn1H8ZxAE_5KERCjozP0XcNvTbt',
-            '1XNceZZXH9oZD0NV6KVlcwoiDJ0q1_WxV', '1G-2CSR5lN7m0nD_iZIEQsj_1ILxo_a0A',
-            '1EbJVM5rmQFVx4RShM8SeFm7ho91etIXZ', '1yMJ-4oUDbcGd__FClaFDgDjxhX8lqRlE'];
+        let vidID = ['9e191e34c449485497d5f1c2df9514da', '4c14df51c1b54ee4b9029777c490b53b',
+            '1ace0236ae864d03978a3d5b84743779', 'bddef47fe2204d829f4e9eec353ba8a1',
+            '27f419d8efcb4a0c997d6d11cc4028a9', '07d79a8ba1384db7ad5a13217db63fce',
+            '4e9696c17a634d848bee39efc6d61c03', 'dd63cb349ea6456f979024ba7fa7360f',
+            '1f1c59c980c740a9b33c8f2f169dfeef', '0da68219a93942d997d68c921a769ca4',
+            '9525c5c261e340baaf0cb2c11e5225ec', '80d8908ba02d4eb98f6c9fed7ba6edec'];
 
         //initiate iamge
         var img = new Image();
@@ -5334,7 +5334,7 @@
                 vid.setAttribute("playsinline", "true");
                 vid.muted = true;
                 vid.setAttribute("loop", "true");
-                vid.src = "https://drive.google.com/uc?export=view&id=" + vidID[Math.floor(Math.random() * (12))];
+                vid.src = "https://video.wixstatic.com/video/42e1cc_" + vidID[Math.floor(Math.random() * (12))] + "/1080p/mp4/file.mp4";
                 document.getElementById("img").appendChild(vid);
                 window.setInterval('window.location.reload()', 300000);
             }
